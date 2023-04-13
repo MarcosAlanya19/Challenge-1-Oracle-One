@@ -9,6 +9,9 @@ izitoast
 ## byId<T extends HTMLElement>(id: string): T
 Esta función toma un ID de elemento HTML como argumento y devuelve el elemento correspondiente del tipo especificado. Si el elemento no se encuentra, se lanza un error.
 
+## emptyFieldAlert()
+Esta función se encargar de alertar en caso el usuario quiera encriptar o desencriptar un campo vacio, lo cual no podria ocurrir, por lo cual corta todo el codigo, hasta tener un valor para encriptar
+
 ## btnCopyAlert()
 Esta función se encarga de la alerta de copia realizada cuando el usuario presiona el botón de copiar. Se utiliza el objeto navigator.clipboard para escribir el texto en el portapapeles del usuario. Después, se muestra una notificación utilizando la librería izitoast.
 

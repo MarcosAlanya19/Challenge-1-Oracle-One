@@ -53,8 +53,27 @@ const btnCopyAlert = () => {
   };
 };
 
+// Alerta de campo vacio
+const emptyFieldAlert = () => {
+  if ($bcryptTextArea.value === '') {
+    iziToast.error({
+      title: 'Campo vacío',
+      message: 'Ingrese un texto para encriptar o desencriptar',
+      timeout: false,
+      position: 'topCenter',
+      icon: 'fa fa-times',
+    });
+    return true;
+  }
+  return false;
+};
+
 // Encriptado del texto
 const contentEncrypted = () => {
+  if (emptyFieldAlert()) {
+    return;
+  }
+
   myDiv.textContent = $bcryptTextArea.value.replace(/[eioua]/g, (letter) => {
     switch (letter) {
       case 'e':
@@ -81,6 +100,10 @@ const contentEncrypted = () => {
 
 // Desencriptado del texto
 const contentDecrypted = () => {
+  if (emptyFieldAlert()) {
+    return;
+  }
+
   myDiv.textContent = $bcryptTextArea.value.replace(
     /enter|imes|ai|ober|ufat/g,
     (letter) => {
