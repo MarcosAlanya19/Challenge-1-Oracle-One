@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/img-logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encrypted - Decrypted</title>
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="body-encrypt">
+      <img src="./img-logo.svg" alt="" />
+
+      <section class="section-encrypt">
+        <textarea
+          id="encrypt-textarea"
+          placeholder="Ingrese el texto aqui"
+        ></textarea>
+        <div>
+          <div class="section-encrypt-alert">
+            <box-icon
+              name="error-alt"
+              type="solid"
+              flip="horizontal"
+              color="#495057"
+            ></box-icon>
+            <p>Solo letras minusculas y sin acentos</p>
+          </div>
+          <div class="section-encrypt-btns">
+            <button id="btn-encrypt" class="section-encrypt-btn-encrypt"
+              >Encriptar</button
+            >
+            <button id="btn-decrypted" class="section-encrypt-btn-decrypted"
+              >Desencriptar</button
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="encrypt-msg" class="section-decrypted">
+        <div class="encrypt-not-msg">
+          <div>
+            <img src="./img-doll-notMessage.svg" alt="img-doll-notMessage" />
+            <h2>Ningún mensaje fue encontrado</h2>
+            <p>Ingresa el texto que desees encriptar o desencriptar</p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
