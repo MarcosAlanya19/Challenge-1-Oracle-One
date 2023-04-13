@@ -3,27 +3,42 @@ import iziToast from 'izitoast';
 import './assets/normalice.css';
 import './assets/style.css';
 
-function byId<T extends HTMLElement>(id: string): T {
+const byId = <T extends HTMLElement>(id: string): T => {
   const element = document.getElementById(id) as T;
   if (!element) {
     throw new Error(`Element with id ${id} not found`);
   }
   return element;
-}
+};
 
 const $bcryptTextArea = byId<HTMLTextAreaElement>('encrypt-textarea');
 const $btnEncrypted = byId<HTMLButtonElement>('btn-encrypt');
 const $btnDecrypted = byId<HTMLButtonElement>('btn-decrypted');
 const $encryptMsg = byId<HTMLDivElement>('encrypt-msg');
 
-// Prohibe ñas mayusculas y tildes
-$bcryptTextArea.addEventListener('input', function () {
-  const inputText = $bcryptTextArea.value;
-  const outputText = inputText.replace(/[^a-z\s]/g, '');
+// Convierte las mayusculas en minusculas y elimina tildes
+$bcryptTextArea.addEventListener('input', () => {
+  const value: string = $bcryptTextArea.value;
+  const newValue: string = value
+    .toLowerCase()
+    .replace(/[áéíóú]/g, (match: string) => {
+      switch (match) {
+        case 'á':
+          return 'a';
+        case 'é':
+          return 'e';
+        case 'í':
+          return 'i';
+        case 'ó':
+          return 'o';
+        case 'ú':
+          return 'u';
+        default:
+          return match;
+      }
+    });
 
-  if (outputText !== inputText) {
-    $bcryptTextArea.value = outputText;
-  }
+  $bcryptTextArea.value = newValue;
 });
 
 // Creacion de HTMLElement
@@ -59,7 +74,7 @@ const emptyFieldAlert = () => {
     iziToast.error({
       title: 'Campo vacío',
       message: 'Ingrese un texto para encriptar o desencriptar',
-      timeout: false,
+      timeout: 3000,
       position: 'topCenter',
       icon: 'fa fa-times',
     });

@@ -23,7 +23,7 @@ Esta función toma el texto del área de texto de entrada y lo desencripta media
 
 # Eventos
 ## 'input' en $bcryptTextArea
-Este evento se dispara cuando el usuario escribe en el área de texto de entrada. Se utiliza para prohibir las mayúsculas y las tildes en el texto de entrada.
+Este no permite la entrada de mayusculas, ni tildes, por lo que convierte de forma inmediata estas mismas a minusculas.
 
 ## 'click' en $btnEncrypted
 Este evento se dispara cuando el usuario presiona el botón de encriptado. Se llama a las funciones btnCopyAlert() y contentEncrypted() para mostrar el texto encriptado.
