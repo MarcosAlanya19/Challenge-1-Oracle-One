@@ -1,5 +1,9 @@
-# Descripción
-Este código es una pequeña aplicación web para encriptar y desencriptar texto mediante una sustitución de vocales y la eliminación de tildes. Además, se proporciona un botón para copiar el texto encriptado o desencriptado al portapapeles.
+## Welcome to Challenge Oracle One
+![Version](https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000)[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
+
+![](public/img.PNG)
+
+> Este código es una pequeña aplicación web para encriptar y desencriptar texto mediante una sustitución de vocales y la eliminación de tildes. Además, se proporciona un botón para copiar el texto encriptado o desencriptado al portapapeles.
 
 # Dependencias
 boxicons
